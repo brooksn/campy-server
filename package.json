@@ -1,0 +1,32 @@
+{
+  "name": "campy-server",
+  "version": "1.0.0",
+  "description": "A tent server using koajs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brooksn/campy-server.git"
+  },
+  "keywords": [
+    "tent"
+  ],
+  "author": "Brooks Newberry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brooksn/campy-server/issues"
+  },
+  "homepage": "https://github.com/brooksn/campy-server#readme",
+  "engines": {
+    "iojs": "^1.8.1",
+    "npm": "^2.8.3"
+  },
+  "dependencies": {
+    "koa": "^0.20.0",
+    "koa-mount": "^1.3.0",
+    "koa-hawk": "*",
+    "koa-knex": "^0.7.5"
+  }
+}
