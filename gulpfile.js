@@ -3,7 +3,7 @@ var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 //var jscs = require('gulp-jscs');
 
-gulp.task('jshint', function(){
+gulp.task('jshint', function() {
   return gulp.src('*.js')
     //.pipe(jscs({ esnext: true }))
     .pipe(jshint('.jshintrc'))
