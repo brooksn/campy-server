@@ -1,8 +1,11 @@
 //https://github.com/hueniverse/hawk
 var Request = require('request');
 var Hawk = require('hawk');
+var querystring = require('querystring');
+var q = '?' + querystring.stringify({foo:'bar', entity: 'https://indy24.cupcake.is'});
+var endpoint = 'discover';
 var userid = 3;
-var url = "http://localhost:3000/new_post/" + userid;
+var url = 'http://localhost:3000/' + endpoint + '/' + userid + q;
 
 // Client credentials
 
@@ -22,11 +25,9 @@ var post = {
 };
 var requestOptions = {
     uri: url,
-    method: 'POST',
-    body: JSON.stringify(post),
-    headers: {
-      "Content-Type": "application/json"
-    }
+    headers: {"Content-Type": "application/json"},
+    method: 'GET'
+    //body: JSON.stringify(post),
 };
 
 // Generate Authorization request header
