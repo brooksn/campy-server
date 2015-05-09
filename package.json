@@ -30,6 +30,7 @@
     "jshint-stylish": "^1.0.1"
   },
   "dependencies": {
+    "co-parallel": "^1.0.0",
     "jsonb-query-composer": "brooksn/jsonb-query-composer",
     "jsonschema": "^1.0.1",
     "knex": "^0.8.3",

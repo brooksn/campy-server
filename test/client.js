@@ -1,7 +1,8 @@
 //https://github.com/hueniverse/hawk
 var Request = require('request');
 var Hawk = require('hawk');
-var url = "http://localhost:3000/new_post/1";
+var userid = 3;
+var url = "http://localhost:3000/new_post/" + userid;
 
 // Client credentials
 
@@ -16,7 +17,7 @@ var credentials = {
 var post = {
   type: 'https://tent.io/types/status/v0',
   content: {
-    text: 'Hello World!'
+    text: 'Hello World! ' + Date.now()
   }
 };
 var requestOptions = {
