@@ -44,6 +44,7 @@
     "koa-route": "^2.4.1",
     "lodash": "^3.9.3",
     "pg": "^4.3.0",
-    "tent-discover": "^0.3.0"
+    "tent-discover": "^0.3.0",
+    "thunkify-wrap": "^1.0.4"
   }
 }
