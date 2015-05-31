@@ -20,8 +20,8 @@
   },
   "homepage": "https://github.com/brooksn/campy-server#readme",
   "engines": {
-    "iojs": "^2.1.0",
-    "npm": "^2.10.1"
+    "iojs": "2.1.0",
+    "npm": "2.10.1"
   },
   "devDependencies": {
     "gulp": "^3.8.11",
