@@ -1,0 +1,64 @@
+CREATE TABLE IF NOT EXISTS "entities" (
+    "id" serial,
+    "url" text NOT NULL,
+    "previous_entities" text[] NOT NULL DEFAULT '{}',
+    "modified" timestamp without time zone DEFAULT now(),
+    PRIMARY KEY ("id"),
+    UNIQUE ("url")
+);
+
+CREATE TABLE IF NOT EXISTS "users" (
+    "id" serial,
+    "entity" text,
+    "username" text,
+    "password" text,
+    "modified" timestamp without time zone DEFAULT now(),
+    PRIMARY KEY ("id"),
+    FOREIGN KEY ("entity") REFERENCES "entities"("url") ON DELETE SET NULL ON UPDATE CASCADE,
+    UNIQUE ("username")
+);
+
+CREATE TABLE IF NOT EXISTS "hawk_keys" (
+    "id" text NOT NULL,
+    "key" text NOT NULL,
+    "algorithm" text,
+    "user_id" integer,
+    PRIMARY KEY ("id"),
+    FOREIGN KEY ("user_id") REFERENCES "users"("id") ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS "attachments" (
+    "hash" text NOT NULL,
+    "name" text,
+    "bytes" text,
+    "users" integer[],
+    PRIMARY KEY ("hash")
+);
+
+CREATE TABLE IF NOT EXISTS "posts" (
+    "id" serial,
+    "json" jsonb,
+    "version_id" text,
+    "users" integer[] NOT NULL DEFAULT '{}',
+    "type" text,
+    "fragment" text,
+    "entity" text,
+    "received_at" timestamp without time zone DEFAULT now(),
+    PRIMARY KEY ("id"),
+    UNIQUE ("version_id"),
+    FOREIGN KEY ("entity") REFERENCES "entities"("url") ON DELETE SET NULL ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS "references" (
+    "id" serial,
+    "json" jsonb,
+    "version_id" text,
+    "mentions_post" text,
+    "mentions_version_id" text,
+    "public" bool,
+    "entity" text,
+    "reftype" reftype,
+    PRIMARY KEY ("id"),
+    FOREIGN KEY ("version_id") REFERENCES "posts"("version_id") ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY ("entity") REFERENCES "entities"("url") ON DELETE SET NULL ON UPDATE CASCADE
+);

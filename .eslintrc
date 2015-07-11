@@ -1,0 +1,22 @@
+{
+  "ecmaFeatures": {
+    "forOf": true,
+    "blockBindings": true,
+    "generators": true,
+    "templateStrings": true,
+  },
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "eqeqeq": 0,
+    "quotes": 0,
+    "curly": 0,
+    "camelcase": 0,
+    "strict": 0,
+    "space-infix-ops": 0,
+    "no-underscore-dangle": 0,
+    "consistent-return": 0,
+    "generator-star": 2
+  }
+}
