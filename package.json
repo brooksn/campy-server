@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node start.js",
     "test": "tape ./test/*.js | node_modules/.bin/tnyan",
-    "prestart": "node lib/repair-all-user-meta-posts.js",
+    "prestart": "node lib/tent/repair-all-user-meta-posts.js",
     "postinstall": "node postinstall.js"
   },
   "repository": {
