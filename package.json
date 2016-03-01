@@ -6,7 +6,8 @@
   "main": "lib/server.js",
   "scripts": {
     "start": "node start.js",
-    "test": "tape ./test/*.js | node_modules/.bin/tnyan",
+    "test": "tape ./test/*.js",
+    "nyan": "tape ./test/*.js | node_modules/.bin/tnyan",
     "prestart": "node lib/tent/repair-all-user-meta-posts.js",
     "postinstall": "node postinstall.js"
   },
@@ -31,6 +32,7 @@
     "canonical-tent-json": "*",
     "co": "^4.5.4",
     "co-request": "^0.2.1",
+    "dotenv": "^2.0.0",
     "hawk": "^2.3.1",
     "jsonb-query-composer": "brooksn/jsonb-query-composer",
     "jsonschema": "^1.0.1",
@@ -47,6 +49,7 @@
   },
   "devDependencies": {
     "co-tape": "^1.0.0",
+    "eslint": "^0.24.1",
     "tap-nyan": "0.0.2",
     "tape": "^4.0.0"
   }

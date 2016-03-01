@@ -11,9 +11,9 @@ var h = {b: 14, a: [{x:[3,2,1]}]};
 
 test('eq helper', function(a){
   a.plan(4);
-  a.ok(eq(aa, b), 'aa should equal b');
-  a.ok(eq(c, d), 'c should equal d');
-  a.ok(eq(e, f), 'e should equal f');
-  a.notOk(eq(g, h), 'g should not equal h');
+  a.ok(eq.firstContainsSecond(aa, b), 'aa should equal b');
+  a.ok(eq.firstContainsSecond(c, d), 'c should equal d');
+  a.ok(eq.firstContainsSecond(e, f), 'e should equal f');
+  a.notOk(eq.firstContainsSecond(g, h), 'g should not equal h');
   a.end();
 });
